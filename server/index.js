@@ -1,13 +1,11 @@
-import Express from "express";
+import express from "express";
+import coursesRouter from "./routes/courses.js";
 
-const app = Express();
+const app = express();
 const PORT = 5000;
 
+app.use("/courses", coursesRouter);
 
-app.get('/', (req,res)=>{
-    res.status(200).json({message: "Succesful"});
-});
-
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`Server is listening at PORT: ${PORT}`);
 });

@@ -1,0 +1,28 @@
+CREATE TABLE instructors (
+  instructor_id SERIAL PRIMARY KEY,
+  instructor_name VARCHAR(255) NOT NULL,
+  instructor_email VARCHAR(255) UNIQUE
+);
+
+
+CREATE TABLE courses (
+  course_id SERIAL PRIMARY KEY ,
+  course_instructor_id INT NOT NULL,
+  course_name VARCHAR(255) NOT NULL,
+  max_seats INT NOT NULL,
+  start_date DATE NOT NULL,
+  FOREIGN KEY (course_instructor_id) REFERENCES instructors(instructor_id)
+);
+
+
+CREATE TABLE leads (
+   lead_id SERIAL PRIMARY KEY,
+   course_id INT NOT NULL,
+   lead_name VARCHAR(255) NOT NULL,
+   lead_email VARCHAR(255) NOT NULL,
+   lead_phone_number VARCHAR(255) NOT NULL,
+   lead_linkedin_profile VARCHAR(255),
+   status VARCHAR(255),
+   FOREIGN KEY (course_id) REFERENCES courses (course_id)
+);
+	

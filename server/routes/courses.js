@@ -1,9 +1,10 @@
 import { Router } from "express";
-import CourseController from "../controller/controller.js"
+import Controller from "../controller/controller.js"
 
 const router = Router();
 
-router.get('/', CourseController.getCourses );
-router.post('/', CourseController.addCourse );
+router.get('/', Controller.getCourses );
+router.post('/', Controller.addCourse );
+router.post('/register', Controller.leadRegister)
 
 export default router;

@@ -1,13 +1,8 @@
 import { Router } from "express";
+import CourseController from "../controller/controller.js"
 
 const router = Router();
 
-router.get('/:id', (req,res)=>{
-    res.status(200).json({message: "All list of courses"})
-});
-
-router.post('/',(req,res)=>{
-    
-});
+router.get('/', CourseController.getCourses );
 
 export default router;

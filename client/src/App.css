@@ -1,0 +1,26 @@
+.superContainer{
+    border: 2px solid black;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.btn{
+    background-color: rgb(22, 185, 95);
+    color: white;
+    border: none;
+    font-size: 22px;
+    border-radius: 500px;
+    padding: 5px 20px ;
+}
+
+.containerForm input{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 400px;
+    margin-bottom: 10px;
+}

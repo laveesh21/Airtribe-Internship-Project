@@ -34,6 +34,7 @@ const addCourse = (req, res) => {
 const leadRegister = (req, res) => {
   const { courseId, leadName, leadEmail, leadPhoneNumber, leadLinkedin } =
     req.body;
+  console.log(req.body); ////////// DEBUGGING
   const values = [courseId, leadName, leadEmail, leadPhoneNumber, leadLinkedin];
 
   // To check if all fields are filled
@@ -41,7 +42,7 @@ const leadRegister = (req, res) => {
     return res.status(400).json({ error: "Mandatory fiels are not filled." });
   }
 
-  // Query to be executed after succesfully reciving details
+  //Query to be executed after succesfully reciving details
   pool.query(queries.leadRegister, values, (error, results) => {
     if (error) {
       console.error("Error while registration: ", error);

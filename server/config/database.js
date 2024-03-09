@@ -1,6 +1,7 @@
 import pkg from "pg";
 import 'dotenv/config';
 
+// Database connection 
 const pool = new pkg.Pool({
     user: process.env.DB_USER, 
     host: process.env.DB_HOST,

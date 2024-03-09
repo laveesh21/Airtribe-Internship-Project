@@ -48,8 +48,37 @@ const leadRegister = (req, res) => {
       console.error("Error while registration: ", error);
       return res.status(500).json({ error: "Internal Server Error" });
     }
-    res.status(201).send("Succesfully Registered")
-    console.log("LOG: Succesfully Registered")
+    res.status(201).send("Succesfully Registered");
+    console.log("LOG: Succesfully Registered");
+  });
+};
+
+// PUT course update API
+const updateCourse = (req, res) => {
+  const instructorId = req.params.instructorId;
+  const courseId = req.params.courseId;
+  const { courseName, seats, startDate } = req.body;
+  const values = [courseName, seats, startDate, courseId, instructorId]; // Add instructorId to values array
+
+  // To check if all fields are filled
+  if (!courseName || !seats || !startDate) {
+    return res.status(400).json({ error: "All fields are required" });
+  }
+
+  // Query to be executed after successfully receiving details
+  pool.query(queries.updateCourse, values, (error, results) => {
+    if (error) {
+      console.error("Error while updating course: ", error);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+    if (results.rowCount === 0) {
+      // If no rows were affected (course not found or unauthorized), return error
+      return res
+        .status(404)
+        .json({ error: "Course not found or unauthorized" });
+    }
+    res.status(200).send("Successfully updated course");
+    console.log("LOG: Successfully updated course");
   });
 };
 
@@ -58,4 +87,5 @@ export default {
   getCourses,
   addCourse,
   leadRegister,
+  updateCourse,
 };

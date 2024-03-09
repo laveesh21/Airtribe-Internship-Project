@@ -6,5 +6,6 @@ const router = Router();
 router.get('/', Controller.getCourses );
 router.post('/', Controller.addCourse );
 router.post('/register', Controller.leadRegister)
+router.put('/:instructorId/:courseId', Controller.updateCourse)
 
 export default router;

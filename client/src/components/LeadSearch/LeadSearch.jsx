@@ -46,7 +46,7 @@ function LeadSearch() {
       {error && <p>Error: {error}</p>}
       <ul>
         {leads.map((lead) => (
-          <Link to={`/courses/${lead.lead_id}`}>
+          <Link to={`/leads/${lead.lead_id}`}>
           <li key={lead.lead_id}>
             {lead.lead_id} - {lead.lead_name} - {lead.lead_email} - {lead.lead_phone_number} - {lead.status}
             </li>

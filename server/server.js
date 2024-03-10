@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import coursesRouter from "./routes/courses.js";
+import leadsRouter from "./routes/leads.js";
 import cors from "cors";
 import jwt from 'jsonwebtoken';
 import pool from "./config/database.js"
@@ -13,7 +14,7 @@ const jwtKey = 'secret'
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/courses", coursesRouter);
-
+app.use("/leads", leadsRouter)
 
 
 // API TO VERIFY LOG IN CREDENTIALS

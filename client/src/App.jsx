@@ -9,6 +9,7 @@ import Home from "./components/home/Home"
 import CreateCourse from "./components/CreateCourse/CreateCourse";
 import Courses from "./components/Courses/Courses";
 import UpdateCourse from "./components/UpdateCourse/UpdateCourse";
+import LeadUpdate from "./LeadUpdate/LeadUpdae";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,7 +26,8 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/create" element={<CreateCourse/>}/>
         <Route path="/courses" element={<Courses/>}/>
-        <Route path="/courses/:course_id" element={<UpdateCourse/>}/> 
+        <Route path="/courses/:course_id" element={<UpdateCourse/>}/>
+        <Route path="/leads/:lead_id" element={<LeadUpdate/>}/> 
 
       </Routes>
     </>

@@ -7,10 +7,13 @@ const updateCourse = `
 UPDATE courses SET course_name = $1, max_seats = $2, start_date = $3
 WHERE course_id = $4;`;
 
+const updateLead ="UPDATE leads SET status = $1, inst_comment = $2 WHERE lead_id = $3;"
+
 export default {
   getCourses,
   addCourse,
   leadRegister,
   updateCourse,
+  updateLead
 
 };

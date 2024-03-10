@@ -23,6 +23,7 @@ CREATE TABLE leads (
    lead_phone_number VARCHAR(255) NOT NULL,
    lead_linkedin_profile VARCHAR(255),
    status VARCHAR(255),
+   inst_comment VARCHAR(255),
    FOREIGN KEY (course_id) REFERENCES courses (course_id)
 );
 	

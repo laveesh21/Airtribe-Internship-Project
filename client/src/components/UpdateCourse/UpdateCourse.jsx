@@ -28,7 +28,7 @@ function UpdateCourse() {
     e.preventDefault();
     try {
       const response = await axios.put(`http://localhost:5000/courses/${course_id}/`, formData);
-      console.log(response.data); // Log the response from the backend
+      console.log(response.data);
       // Reset the form after successful submission
       setFormData({
         courseName: '',

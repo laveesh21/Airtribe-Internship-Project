@@ -81,10 +81,33 @@ const updateCourse = (req, res) => {
   });
 };
 
+const updateLead = (req, res) => {
+  const leadId = req.params.leadId;
+  const { status, inst_comment } = req.body;
+  const values = [status, inst_comment, leadId];
+  
+  // Query to be executed after successfully receiving details
+  pool.query(queries.updateLead, values, (error, results) => {
+    if (error) {
+      console.error("Error while updating lead: ", error);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+    if (results.rowCount === 0) {
+      // If no rows were affected (lead not found or unauthorized), return error
+      return res
+        .status(404)
+        .json({ error: "Lead not found or unauthorized" });
+    }
+    res.status(200).send("Successfully updated lead");
+    console.log("LOG: Successfully updated lead");
+  });
+};
+
 // Exporting all contollers
 export default {
   getCourses,
   addCourse,
   leadRegister,
   updateCourse,
+  updateLead,
 };

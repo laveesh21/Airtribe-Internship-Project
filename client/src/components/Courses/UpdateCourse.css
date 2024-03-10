@@ -1,0 +1,13 @@
+.home-body-grid{
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    width: 900%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-body-grid a{
+    width: 400px;
+    /* border: 2px solid red; */
+}

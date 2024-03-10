@@ -24,3 +24,10 @@
     width: 400px;
     margin-bottom: 10px;
 }
+
+.super-nav-bar{
+    width: 100%;
+    /* position: fixed; */
+    z-index: 100;
+  }
+  

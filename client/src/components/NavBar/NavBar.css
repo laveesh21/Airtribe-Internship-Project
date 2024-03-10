@@ -1,0 +1,74 @@
+.super-nav {
+    width: 100%;
+    z-index: 10000;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 2vw; 
+    background-color: #040404;
+    color: rgb(255, 255, 255);
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    border-bottom: 0.6px solid rgb(67, 67, 67);
+  }
+  
+  .logo {
+    font-size: 2.5vw; /* Adjusted font size using vw unit */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 2vw; 
+    width: 2vw; 
+    margin-right: 1vw; 
+  }
+  
+  .apex, .devs {
+    font-size: 2.2vw;
+  }
+  
+  .nav-content {
+    width: 50%;
+  }
+  
+  .nav-content ul{
+    display: flex;
+  }
+  
+  .nav-content li{
+    margin-right: 3vw;
+    list-style: none;
+  }
+  
+  .nav-content li a{
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color:white;
+    /* display: inline-block; */
+  }
+  
+  .side-tools {
+    display: flex;
+    align-items: center;
+  }
+  
+  .userIcon {
+    padding-top: 0.5vw; 
+    margin-left: 1vw; 
+  }
+  
+  .log-button button {
+    margin: 0 0.8vw; 
+    padding: 4px 8px;
+    font-size: 1.3rem; 
+    color: rgb(255, 255, 255);
+    background-color: #00BF62;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+  }

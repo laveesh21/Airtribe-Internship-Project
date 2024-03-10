@@ -1,0 +1,9 @@
+.lead-search-container{
+    border: 3px solid black;
+    height: 300px;
+}
+
+.lead-search-container button{
+    font-size: 15px;
+    font-weight: 600;
+}

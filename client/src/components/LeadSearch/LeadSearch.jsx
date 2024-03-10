@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './LeadSearch.css'
 
 
 const token = localStorage.getItem('token');
@@ -29,7 +30,7 @@ function LeadSearch() {
   console.log('Leads:', leads); // Log the value of leads
 
   return (
-    <div>
+    <div className='lead-search-container'>
       <h1>Lead Search</h1>
       <input
         type="text"
@@ -37,14 +38,14 @@ function LeadSearch() {
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Enter lead name"
       />
-      <button onClick={handleSearch} disabled={!searchTerm || loading}>
+      <button className="btn" onClick={handleSearch} disabled={!searchTerm || loading}>
         Search
       </button>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       <ul>
         {leads.map((lead) => (
-          <li key={lead.lead_id}>{lead.lead_name} - {lead.lead_email}</li>
+          <li key={lead.lead_id}>{lead.lead_id} - {lead.lead_name} - {lead.lead_email} - {lead.lead_phone_number} - {lead.status}</li>
         ))}
       </ul>
     </div>

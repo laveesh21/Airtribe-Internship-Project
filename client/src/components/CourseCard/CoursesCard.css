@@ -1,0 +1,10 @@
+.superproject-card{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    margin-bottom: 20px;
+}

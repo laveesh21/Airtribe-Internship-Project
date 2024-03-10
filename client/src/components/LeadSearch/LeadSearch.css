@@ -1,9 +1,15 @@
 .lead-search-container{
     border: 3px solid black;
     height: 300px;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .lead-search-container button{
+    margin: 20px 0;
+    width: 100px;
     font-size: 15px;
     font-weight: 600;
 }

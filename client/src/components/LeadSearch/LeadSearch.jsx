@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './LeadSearch.css'
+import { Link } from 'react-router-dom';
 
 
 const token = localStorage.getItem('token');
@@ -45,7 +46,11 @@ function LeadSearch() {
       {error && <p>Error: {error}</p>}
       <ul>
         {leads.map((lead) => (
-          <li key={lead.lead_id}>{lead.lead_id} - {lead.lead_name} - {lead.lead_email} - {lead.lead_phone_number} - {lead.status}</li>
+          <Link to={`/courses/${lead.lead_id}`}>
+          <li key={lead.lead_id}>
+            {lead.lead_id} - {lead.lead_name} - {lead.lead_email} - {lead.lead_phone_number} - {lead.status}
+            </li>
+            </Link>
         ))}
       </ul>
     </div>

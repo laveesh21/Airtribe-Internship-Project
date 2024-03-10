@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import CoursesCard from "../CourseCard/CoursesCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./UpdateCourse.css"
 
-const UpdateCourse = () => {
+const Courses = () => {
   const [courses, setCourse] = useState([]);
 
   useEffect(() => {
@@ -22,7 +21,7 @@ const UpdateCourse = () => {
         <div><h1>List of Courses</h1></div>
       <div className="home-body-grid">
         {courses.map((course) => (
-          <Link to={`/course/${course.course_id}`} key={course.course_id}>
+          <Link to={`/courses/${course.course_id}`} key={course.course_id}>
             <CoursesCard
               name={course.course_name}
               seats={course.max_seats}
@@ -35,4 +34,4 @@ const UpdateCourse = () => {
   );
 };
 
-export default UpdateCourse;
+export default Courses;

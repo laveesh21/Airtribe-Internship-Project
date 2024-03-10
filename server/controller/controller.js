@@ -55,10 +55,9 @@ const leadRegister = (req, res) => {
 
 // PUT course update API
 const updateCourse = (req, res) => {
-  const instructorId = req.params.instructorId;
   const courseId = req.params.courseId;
   const { courseName, seats, startDate } = req.body;
-  const values = [courseName, seats, startDate, courseId, instructorId]; // Add instructorId to values array
+  const values = [courseName, seats, startDate, courseId]; // Add instructorId to values array
 
   // To check if all fields are filled
   if (!courseName || !seats || !startDate) {

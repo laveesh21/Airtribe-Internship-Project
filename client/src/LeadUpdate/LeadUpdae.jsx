@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import "./LeadUpdate.css"
 
 function LeadUpdate() {
   const [leadData, setLeadData] = useState({
@@ -38,7 +39,7 @@ function LeadUpdate() {
   };
 
   return (
-    <div>
+    <div className='leadUpdateContainer'>
       <h2>Update Lead</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -64,7 +65,7 @@ function LeadUpdate() {
             onChange={handleChange}
           ></textarea>
         </div>
-        <button type="submit">Update Lead</button>
+        <button className='btn' type="submit">Update</button>
       </form>
     </div>
   );
